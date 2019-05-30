@@ -11,8 +11,8 @@ const {middleware2Koa} = NextBlock
 // Should Orchestrator and Block extend the same interface?
 
 module.exports = class NextKoaBinder extends Binder {
-  constructor () {
-    super()
+  constructor (options) {
+    super(options)
 
     this.blocks = {
       next: {
@@ -43,7 +43,7 @@ module.exports = class NextKoaBinder extends Binder {
     server.hooks.routerLoaded.tap('NextKoaBinder', app => {
       // TODO:
       // middleware and dev middleware
-      app.use(middleware2Koa(next.middleware()))
+      app.use(middleware2Koa(next.devMiddleware()))
     })
   }
 }
