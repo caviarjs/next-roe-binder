@@ -7,6 +7,8 @@ const {Binder} = require('caviar')
 
 const {middleware2Koa} = NextBlock
 
+const NEXT_ROE_BINDER = 'NextRoeBinder'
+
 // Thinking:
 // Should Orchestrator and Block extend the same interface?
 
@@ -40,7 +42,14 @@ module.exports = class NextKoaBinder extends Binder {
   }, {
     dev
   }) {
-    server.hooks.routerLoaded.tap('NextKoaBinder', app => {
+    next.hooks.created.tap(NEXT_ROE_BINDER, nextApp => {
+      // next.hooks.created called first
+      server.hooks.created.tap(NEXT_ROE_BINDER, roe => {
+        roe.next = nextApp
+      })
+    })
+
+    server.hooks.routerLoaded.tap(NEXT_ROE_BINDER, app => {
       // TODO:
       // middleware and dev middleware
       app.use(middleware2Koa(next.devMiddleware()))
