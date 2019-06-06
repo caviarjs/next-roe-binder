@@ -49,7 +49,7 @@ module.exports = class NextKoaBinder extends Binder {
       })
     })
 
-    server.hooks.routerLoaded.tap(NEXT_ROE_BINDER, app => {
+    server.hooks.loaded.tap(NEXT_ROE_BINDER, app => {
       // TODO:
       // middleware and dev middleware
       app.use(middleware2Koa(next.devMiddleware()))
