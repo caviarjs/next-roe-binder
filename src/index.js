@@ -36,7 +36,7 @@ module.exports = class NextKoaBinder extends Binder {
     }
   }
 
-  async _orchestrate ({
+  async orchestrate ({
     next,
     server
   }, {
