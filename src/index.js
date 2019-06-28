@@ -12,7 +12,7 @@ const NEXT_ROE_BINDER = 'NextRoeBinder'
 // Thinking:
 // Should Orchestrator and Block extend the same interface?
 
-module.exports = class NextKoaBinder extends Binder {
+module.exports = class NextRoeBinder extends Binder {
   constructor (options) {
     super(options)
 
@@ -20,12 +20,13 @@ module.exports = class NextKoaBinder extends Binder {
       next: {
         from: NextBlock,
         // Use default configMap
-        // ```js
         // configMap: {
         //   next: 'next'
         //   nextWebpack: 'nextWebpack'
-        // }
-        // ```
+        // },
+        phaseMap: {
+          build: 'build'
+        }
       },
       server: {
         from: RoeBlock,
@@ -39,8 +40,6 @@ module.exports = class NextKoaBinder extends Binder {
   async orchestrate ({
     next,
     server
-  }, {
-    dev
   }) {
     next.hooks.created.tap(NEXT_ROE_BINDER, nextApp => {
       // next.hooks.created called first

@@ -50,7 +50,9 @@
   },
   "dependencies": {
     "@caviar/next-block": "0.0.2",
-    "@caviar/roe-block": "0.0.1",
-    "caviar": "^3.0.0-alpha"
+    "@caviar/roe-block": "0.0.1"
+  },
+  "peerDependencies": {
+    "caviar": "^3.0.0"
   }
 }
