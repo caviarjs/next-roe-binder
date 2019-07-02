@@ -1,6 +1,6 @@
 {
   "name": "@caviar/next-roe-binder",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Caviar binder to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
@@ -38,14 +38,14 @@
     "url": "https://github.com/caviarjs/next-roe-binder/issues"
   },
   "devDependencies": {
-    "@ostai/eslint-config": "^3.1.0",
-    "@caviar/next-block": "0.0.2",
-    "@caviar/roe-block": "0.0.1",
+    "@ostai/eslint-config": "^3.2.0",
+    "@caviar/next-block": "0.0.3",
+    "@caviar/roe-block": "0.0.2",
     "caviar": "^3.0.0-alpha",
-    "ava": "^1.4.1",
-    "codecov": "^3.4.0",
-    "eslint": "^5.16.0",
-    "eslint-plugin-import": "^2.17.2",
+    "ava": "^2.1.0",
+    "codecov": "^3.5.0",
+    "eslint": "^6.0.1",
+    "eslint-plugin-import": "^2.18.0",
     "nyc": "^14.1.1"
   },
   "dependencies": {
