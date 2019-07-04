@@ -1,6 +1,6 @@
 {
   "name": "@caviar/next-roe-binder",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Caviar binder to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
@@ -39,8 +39,6 @@
   },
   "devDependencies": {
     "@ostai/eslint-config": "^3.2.0",
-    "@caviar/next-block": "0.0.5",
-    "@caviar/roe-block": "0.0.2",
     "caviar": "^3.0.0-alpha",
     "ava": "^2.1.0",
     "codecov": "^3.5.0",
@@ -49,8 +47,8 @@
     "nyc": "^14.1.1"
   },
   "dependencies": {
-    "@caviar/next-block": "0.0.5",
-    "@caviar/roe-block": "0.0.2"
+    "@caviar/next-block": "^0.0.6",
+    "@caviar/roe-block": "^0.0.2"
   },
   "peerDependencies": {
     "caviar": "^3.0.0"
