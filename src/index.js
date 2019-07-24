@@ -67,11 +67,11 @@ module.exports = class NextRoeBinder extends Binder {
       app.use(middleware2Koa(next.middleware()))
     })
 
-    server.hooks.run.tapPromise(NEXT_ROE_BINDER, () => {
+    server.hooks.run.tapPromise(NEXT_ROE_BINDER, async () => {
       planner.resolve('server-ready')
     })
 
-    next.hooks.run.tapPromise(NEXT_ROE_BINDER, () => {
+    next.hooks.run.tapPromise(NEXT_ROE_BINDER, async () => {
       planner.resolve('next-ready')
     })
   }

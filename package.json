@@ -1,6 +1,6 @@
 {
   "name": "@caviar/next-roe-binder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Caviar binder to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
