@@ -3,6 +3,7 @@
 const NextBlock = require('@caviar/next-block')
 const RoeBlock = require('@caviar/roe-block')
 
+const Planner = require('promise-planner')
 const {Binder} = require('caviar')
 
 const {middleware2Koa} = NextBlock
@@ -48,8 +49,30 @@ module.exports = class NextRoeBinder extends Binder {
       })
     })
 
+    const planner = new Planner(
+      ['server-ready', 'next-ready'],
+      () => next.listen()
+      .then(port => {
+        // eslint-disable-next-line no-console
+        console.log('server started at http://localhost:%s', port)
+      })
+    )
+
+    planner.catch(() => {
+      // eslint-disable-next-line no-console
+      console.error('fails to start server')
+    })
+
     server.hooks.loaded.tap(NEXT_ROE_BINDER, app => {
       app.use(middleware2Koa(next.middleware()))
+    })
+
+    server.hooks.run.tapPromise(NEXT_ROE_BINDER, () => {
+      planner.resolve('server-ready')
+    })
+
+    next.hooks.run.tapPromise(NEXT_ROE_BINDER, () => {
+      planner.resolve('next-ready')
     })
   }
 }
