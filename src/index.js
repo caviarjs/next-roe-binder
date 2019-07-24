@@ -51,7 +51,7 @@ module.exports = class NextRoeBinder extends Binder {
 
     const planner = new Planner(
       ['server-ready', 'next-ready'],
-      () => next.listen()
+      () => server.listen()
       .then(port => {
         // eslint-disable-next-line no-console
         console.log('server started at http://localhost:%s', port)
