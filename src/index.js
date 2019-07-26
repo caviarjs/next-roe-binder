@@ -4,16 +4,16 @@ const NextBlock = require('@caviar/next-block')
 const RoeBlock = require('@caviar/roe-block')
 
 const Planner = require('promise-planner')
-const {Binder} = require('caviar')
+const {Mixer} = require('caviar')
 
 const {middleware2Koa} = NextBlock
 
-const NEXT_ROE_BINDER = 'NextRoeBinder'
+const NEXT_ROE_BINDER = 'NextRoeMixer'
 
 // Thinking:
 // Should Orchestrator and Block extend the same interface?
 
-module.exports = class NextRoeBinder extends Binder {
+module.exports = class NextRoeMixer extends Mixer {
   constructor (options) {
     super(options)
 
@@ -38,7 +38,7 @@ module.exports = class NextRoeBinder extends Binder {
     }
   }
 
-  async orchestrate ({
+  async mix ({
     next,
     server
   }) {

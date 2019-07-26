@@ -1,11 +1,11 @@
 {
-  "name": "@caviar/next-roe-binder",
-  "version": "1.0.2",
+  "name": "@caviar/next-roe-mixer",
+  "version": "1.0.0",
   "description": "Caviar binder to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
-    "test": "NODE_DEBUG=@caviar/next-roe-binder nyc ava --timeout=10s --verbose",
-    "test:dev": "NODE_DEBUG=@caviar/next-roe-binder nyc ava --timeout=10s --verbose && npm run report:dev",
+    "test": "NODE_DEBUG=@caviar/next-roe-mixer nyc ava --timeout=10s --verbose",
+    "test:dev": "NODE_DEBUG=@caviar/next-roe-mixer nyc ava --timeout=10s --verbose && npm run report:dev",
     "lint": "eslint .",
     "fix": "eslint . --fix",
     "posttest": "npm run report",
@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/caviarjs/next-roe-binder.git"
+    "url": "git://github.com/caviarjs/next-roe-mixer.git"
   },
   "keywords": [
-    "@caviar/next-roe-binder"
+    "@caviar/next-roe-mixer"
   ],
   "engines": {
     "node": ">= 6"
@@ -35,11 +35,11 @@
   "author": "caviarjs",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/caviarjs/next-roe-binder/issues"
+    "url": "https://github.com/caviarjs/next-roe-mixer/issues"
   },
   "devDependencies": {
     "@ostai/eslint-config": "^3.3.2",
-    "caviar": "^3.0.2",
+    "caviar": "^4.0.0",
     "ava": "^2.2.0",
     "codecov": "^3.5.0",
     "eslint": "^6.1.0",
@@ -52,6 +52,6 @@
     "promise-planner": "^1.1.0"
   },
   "peerDependencies": {
-    "caviar": "^3.0.0"
+    "caviar": "^4.0.0"
   }
 }
