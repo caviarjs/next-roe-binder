@@ -1,7 +1,7 @@
 {
   "name": "@caviar/next-roe-mixer",
   "version": "1.0.0",
-  "description": "Caviar binder to orchestrate next and roe",
+  "description": "Caviar mixer to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
     "test": "NODE_DEBUG=@caviar/next-roe-mixer nyc ava --timeout=10s --verbose",

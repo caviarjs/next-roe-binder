@@ -15,7 +15,7 @@
 
 # @caviar/next-roe-mixer
 
-Caviar binder to orchestrate next and roe
+Caviar mixer to orchestrate next and roe
 
 ## Install
 
@@ -26,7 +26,7 @@ $ npm i @caviar/next-roe-mixer
 ## Usage
 
 ```js
-const next_roe_binder = require('@caviar/next-roe-mixer')
+const next_roe_mixer = require('@caviar/next-roe-mixer')
 ```
 
 ## License
