@@ -14,8 +14,8 @@ const NEXT_ROE_BINDER = 'NextRoeMixer'
 // Should Orchestrator and Block extend the same interface?
 
 module.exports = class NextRoeMixer extends Mixer {
-  constructor (options) {
-    super(options)
+  constructor () {
+    super()
 
     this.blocks = {
       next: {
