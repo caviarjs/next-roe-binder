@@ -1,6 +1,6 @@
 {
   "name": "@caviar/next-roe-mixer",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Caviar mixer to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
