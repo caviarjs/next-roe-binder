@@ -1,6 +1,6 @@
 {
   "name": "@caviar/next-roe-mixer",
-  "version": "3.0.9",
+  "version": "3.0.10",
   "description": "Caviar mixer to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
@@ -47,8 +47,8 @@
     "nyc": "^14.1.1"
   },
   "dependencies": {
-    "@caviar/next-block": "^3.0.7",
-    "@caviar/roe-block": "^3.0.5",
+    "@caviar/next-block": "^3.0.8",
+    "@caviar/roe-block": "^3.0.6",
     "promise-planner": "^1.1.0"
   },
   "peerDependencies": {
