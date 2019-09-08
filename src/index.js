@@ -51,17 +51,14 @@ module.exports = class NextRoeMixer extends Mixer {
 
     const planner = new Planner(
       ['server-ready', 'next-ready'],
+
+      // Only start the server when next-block has run
       () => server.listen()
       .then(port => {
         // eslint-disable-next-line no-console
         console.log('server started at http://localhost:%s', port)
       })
     )
-
-    planner.catch(() => {
-      // eslint-disable-next-line no-console
-      console.error('fails to start server')
-    })
 
     server.hooks.loaded.tap(NEXT_ROE_BINDER, app => {
       app.use(middleware2Koa(next.middleware()))
@@ -73,6 +70,12 @@ module.exports = class NextRoeMixer extends Mixer {
 
     next.hooks.run.tapPromise(NEXT_ROE_BINDER, async () => {
       planner.resolve('next-ready')
+    })
+
+    return planner.catch(err => {
+      // eslint-disable-next-line no-console
+      console.error('fails to start server')
+      throw err
     })
   }
 }
