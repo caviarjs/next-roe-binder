@@ -1,6 +1,6 @@
 {
   "name": "@caviar/next-roe-mixer",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Caviar mixer to orchestrate next and roe",
   "main": "src/index.js",
   "scripts": {
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@ostai/eslint-config": "^3.3.2",
-    "caviar": "^6.0.0",
+    "caviar": "^6.0.1",
     "ava": "^2.2.0",
     "codecov": "^3.5.0",
     "eslint": "^6.1.0",
@@ -52,6 +52,6 @@
     "promise-planner": "^1.1.0"
   },
   "peerDependencies": {
-    "caviar": "^6.0.0"
+    "caviar": "^6.0.1"
   }
 }
